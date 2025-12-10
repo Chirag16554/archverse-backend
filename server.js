@@ -4,7 +4,10 @@ const fs = require('fs/promises');
 const path = require('path');
 
 const app = express();
-app.use(cors({ origin: true }))
+app.use(cors({ 
+  origin: true,
+  credentials: false,
+ }))
 app.use(express.json());
 
 const PROJECTS_FILE = path.join(__dirname, 'projects.json');
